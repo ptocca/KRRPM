@@ -50,6 +50,12 @@ Some effort has been put into minimizing the use of memory.
 As a reference, a training set of 80,000 objects was used successfully to train 
 a KRRPM model on a server with 132GB of RAM.
 
+## KRRPM Example
+The notebook `KRRPM-Example.ipynb` in this repository provides a complete example of the application of KRRPM.
+It can be run by clicking on the badge below.
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ptocca/KRRPM/HEAD?filepath=KRRPM-Example.ipynb)
+
 ## Acknowledgements
 This implementation was developed while at the Centre for Reliable Machine Learning, Royal Holloway, University of London.
 The author is grateful to AstraZeneca for the grant R10911 "Automated Chemical Synthesis".
