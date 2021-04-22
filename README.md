@@ -3,7 +3,7 @@
 
 This repository contains an implementation of a Kernel Ridge Regression
 Predictive Machine, a non-parametric method for the probabilistic prediction of
-continuous values
+continuous values.
 
 ## KRRPM   
 KRRPM[1] is a form of Conformal Predictive Distribution[2] which is a framework for
@@ -14,8 +14,8 @@ Distribution Function for the label of test objects.
 ![Predictive Distribution](PredictiveDistributionInterpretation.png "Predictive Distribution")
 
 A key advantage is that, under minimal assumptions, the KRRPM produces
-**calibrated** predictions, i.e. it assigns probabilities to events that
-correspond to the relative frequencies to those events, within statistical
+**calibrated** predictions, i.e. the probabilities assigned to events correspond 
+to the relative frequencies of those events, within statistical
 fluctuation. The only assumption is that training data and test data be
 *i.i.d.*, that is, independent and identically distributed.
   

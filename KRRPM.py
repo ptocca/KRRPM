@@ -124,23 +124,36 @@ def compute_kernels(X,Y=None,metric=None,**kernel_kwargs):
 
 class KRRPM(BaseEstimator, RegressorMixin):
     """Computes the Predictive Distributions according the Kernel Ridge Regression Predictive Machine"""
-    def __init__(self, a, kernel, lb=None, ub=None, max_pd_pts=1000, kernel_kwargs={}):
+    def __init__(self, a, kernel, max_pd_pts=1000, kernel_kwargs={}, center_y=True):
+        """Creates an instance of KRRPM.
+
+        Input
+        a: regularization parameter, usually a small value (<< 1.0) found by cross validation.
+        kernel: "linear", "rbf", or a callable
+        max_pd_pts: the max number of elements in the computed predictive distribution. KRRPM would
+                    output a PD with as many entries as training observations. When the training set
+                    is large, this is often overkill. (default: 1000)
+        kernel_kwargs: a dict containing the parameters to pass to the kernel function
+        center_y: "centers" the labels (subtracts the mean over the training set) in the calculations
+        """
         self.kernel = kernel
         self.a = a
-        self.lb = lb
-        self.ub = ub
         self.max_pd_pts = max_pd_pts
         self.kernel_kwargs = kernel_kwargs
         self.ss = None
         self.y_offset = None
-        self.center_y = None
+        self.center_y = center_y
         self.H_diag = None
         self.K_inv = None
 
-    def fit(self, X, y, center_y=True):
-        self.y = np.array(y).reshape(-1, 1)
+    def fit(self, X, y):
+        """Trains the KRRPM.
 
-        self.center_y = center_y
+        Input:
+        X: 2-d array or sparse matrix containing the training objects
+        y: array containing the training labels
+        """
+        self.y = np.array(y).reshape(-1, 1)
 
         if self.center_y:
             self.y_offset = np.average(self.y)
@@ -205,8 +218,6 @@ class KRRPM(BaseEstimator, RegressorMixin):
             C += self.y_offset
 
         distribution = np.sort(C)
-        if self.lb is not None or self.ub is not None:
-            distribution = distribution.clip(self.lb, self.ub)
         middle_index = int(C.shape[0]/2)
 
         C_srt = distribution[middle_index]
@@ -219,6 +230,16 @@ class KRRPM(BaseEstimator, RegressorMixin):
 
 
     def predict(self,X):
+        """
+        Computes the predictive distributions for the given objects
+
+        Input
+        X: 2-d array or sparse matrix containing the training objects
+
+        Output:
+        array with point predictions for each test object, computed as the medians for each predictive distribution.
+        
+        NOTE: the predictive distributions are in the 'predicted_distribution' attribute of the KRRPM object."""
         X_scaled = self.ss.transform(X)
 
         ks = compute_kernels(self.X,
