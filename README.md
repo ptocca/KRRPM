@@ -6,11 +6,13 @@ Predictive Machine, a non-parametric method for the probabilistic prediction of
 continuous values
 
 ## KRRPM   
-KRRPM[^1] is a form of Conformal Predictive Distribution[^2] which is a framework for
+KRRPM[1] is a form of Conformal Predictive Distribution[2] which is a framework for
 non-parametric prior-free probabilistic prediction.
 The prediction for a test object is provided in the form of Cumulative
 Distribution Function for the label of test objects.
+
 ![Predictive Distribution](PredictiveDistributionInterpretation.png "Predictive Distribution")
+
 A key advantage is that, under minimal assumptions, the KRRPM produces
 **calibrated** predictions, i.e. it assigns probabilities to events that
 correspond to the relative frequencies to those events, within statistical
@@ -53,5 +55,5 @@ This implementation was developed while at the Centre for Reliable Machine Learn
 The author is grateful to AstraZeneca for the grant R10911 "Automated Chemical Synthesis".
 
 
-[^1]: "Conformal Predictive Distributions  with Kernels", V. Vovk et al., 2018 [https://link.springer.com/chapter/10.1007/978-3-319-99492-5_4]
-[^2]: "Nonparametric Predictive Distributions Based on Conformal Prediction", V. Vovk, 2019, [https://doi.org/10.1007/s10994-018-5755-8]
+[1]: "Conformal Predictive Distributions  with Kernels", V. Vovk et al., 2018 [https://link.springer.com/chapter/10.1007/978-3-319-99492-5_4]
+[2]: "Nonparametric Predictive Distributions Based on Conformal Prediction", V. Vovk, 2019, [https://doi.org/10.1007/s10994-018-5755-8]
