@@ -54,6 +54,6 @@ a KRRPM model on a server with 132GB of RAM.
 This implementation was developed while at the Centre for Reliable Machine Learning, Royal Holloway, University of London.
 The author is grateful to AstraZeneca for the grant R10911 "Automated Chemical Synthesis".
 
-
-[1]: "Conformal Predictive Distributions  with Kernels", V. Vovk et al., 2018 [https://link.springer.com/chapter/10.1007/978-3-319-99492-5_4]
+## References
+[1]: "Conformal Predictive Distributions  with Kernels", V. Vovk et al., 2018 [https://link.springer.com/chapter/10.1007/978-3-319-99492-5_4]    
 [2]: "Nonparametric Predictive Distributions Based on Conformal Prediction", V. Vovk, 2019, [https://doi.org/10.1007/s10994-018-5755-8]
