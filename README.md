@@ -54,7 +54,7 @@ a KRRPM model on a server with 132GB of RAM.
 The notebook `KRRPM-Example.ipynb` in this repository provides a complete example of the application of KRRPM.
 It can be run by clicking on the badge below.
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ptocca/KRRPM/HEAD?filepath=KRRPM-Example.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ptocca/KRRPM/Pip_package?filepath=examples/KRRPM-Example.ipynb)
 
 ## Acknowledgements
 This implementation was developed while at the Centre for Reliable Machine Learning, Royal Holloway, University of London.
