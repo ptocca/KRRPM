@@ -5,6 +5,12 @@ This repository contains an implementation of a Kernel Ridge Regression
 Predictive Machine, a non-parametric method for the probabilistic prediction of
 continuous values.
 
+The implementation is available as a package that can be installed with `pip`
+
+```
+pip install KRRPM
+```
+
 ## KRRPM   
 KRRPM[1] is a form of Conformal Predictive Distribution[2] which is a framework for
 non-parametric prior-free probabilistic prediction.
