@@ -1,1 +1,1 @@
-from .KRRPM import KRRPM
+from .krrpm import KRRPM
